@@ -1,0 +1,8 @@
+<label for="name">Digite seu nome</label>
+<input
+  type="text"
+  id="name"
+  placeholder="DevTo da Silva"
+  [value]="value"
+  (input)="onChanged($any($event.target)?.value)"
+/>

@@ -1,0 +1,18 @@
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a [routerLink]="['contact-us', 'template-driven']" [relativeTo]="route"
+          >Form using template driven</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="['contact-us', 'reactive-form']" [relativeTo]="route"
+          >Form using reactive forms</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<router-outlet />

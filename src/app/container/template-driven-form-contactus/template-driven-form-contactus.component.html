@@ -1,0 +1,43 @@
+<form (ngSubmit)="submit()">
+  <fieldset class="">
+    <legend>Fale conosco</legend>
+    <div class="data">
+      <app-contact-us-name-input
+        name="yourName"
+        [contactName]="contactUs.name"
+        [(ngModel)]="contactUs.name"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+    <div class="data">
+      <app-contact-us-email-input
+        name="email"
+        [contactEmail]="contactUs.email"
+        [(ngModel)]="contactUs.email"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+
+    <div class="data">
+      <app-contact-us-message-text
+        [(ngModel)]="contactUs.message"
+        [ngModelOptions]="{ standalone: true }"
+        [contactText]="contactUs.message"
+      />
+    </div>
+  </fieldset>
+
+  <button
+    type="submit"
+    aria-label="Enviar o motivo do contato"
+    aria-describedby="sendContactUs"
+  >
+    Enviar
+  </button>
+  <span [hidden]="true" id="sendContactUs"
+    >Ao clicar no botão, você envia os dados que foram preenchidos. E assim que
+    pudermos, retornaremos o contato</span
+  >
+</form>
+
+<pre>{{ contactUs | json }}</pre>

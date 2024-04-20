@@ -1,0 +1,28 @@
+<form (ngSubmit)="submit()" [formGroup]="contactUsForm">
+  <fieldset class="">
+    <legend>Fale conosco</legend>
+    <div class="data">
+      <app-contact-us-name-input formControlName="name" />
+    </div>
+    <div class="data">
+      <app-contact-us-email-input formControlName="email" />
+    </div>
+    <div class="data">
+      <app-contact-us-message-text formControlName="message" />
+    </div>
+  </fieldset>
+
+  <button
+    type="submit"
+    aria-label="Enviar o motivo do contato"
+    aria-describedby="sendContactUs"
+  >
+    Enviar
+  </button>
+  <span [hidden]="true" id="sendContactUs">
+    Ao clicar no botão, você envia os dados que foram preenchidos. E assim que
+    pudermos, retornaremos o contato
+  </span>
+</form>
+
+<pre>{{ contactUsForm.getRawValue() | json }}</pre>
